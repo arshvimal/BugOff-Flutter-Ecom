@@ -33,7 +33,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Form(
             key: _formKey,
             child: Column(
@@ -323,6 +323,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           log("Password and Confirm Password do not match");
                           return;
                         }
+                        if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(_emailController.text.trim())) {
+                          log("Email is invalid");
+                          return;
+                        }
+                        if (_passwordController.text.trim().contains(' ')) {
+                          log("Password shouldn't contain spaces");
+                          return;
+                        }
 
                         var resp = await CurrentUser.registerUser(
                           CurrentUser(
@@ -401,7 +409,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: Text(
                         "Continue",
                         style: GoogleFonts.montserrat(
-                          fontSize: ResponsiveScreen.halfRepWidth(context, 24),
+                          fontSize: ResponsiveScreen.halfRepWidth(context, 18),
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
                         ),

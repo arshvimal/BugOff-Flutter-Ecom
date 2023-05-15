@@ -59,7 +59,6 @@ class _NavigationBarCustomState extends State<NavigationBarCustom> {
           onTap: () {
             setState(() {
               NavigationBarCustom.currentIndex = 2;
-              FirebaseAuth.instance.signOut();
 
               DashboardScreen.dashboardController.animateToPage(
                 2,

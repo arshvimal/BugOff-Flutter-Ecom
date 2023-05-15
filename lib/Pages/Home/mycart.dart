@@ -32,7 +32,7 @@ class _MyCartState extends State<MyCart> {
                   Text(
                     "My Cart",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 20, color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -42,7 +42,7 @@ class _MyCartState extends State<MyCart> {
                 child: Text(
                   "You have ${CurrentUser.currentUser?.cart.length ?? [].length} items in your cart",
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 15,color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -159,7 +159,7 @@ class _MyCartState extends State<MyCart> {
                                     Text(
                                       productData[index]['logistics_cost'],
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 12, color: Colors.red,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),

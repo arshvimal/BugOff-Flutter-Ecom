@@ -123,27 +123,30 @@ class _DetailsState extends State<Details> {
                   children: [
                     Row(
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 5, top: 5),
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            widget.product['name'].length >
+                        Flexible(
+                            child: Container(
+                              margin: EdgeInsets.only(left: 5, top: 5),
+                              padding: EdgeInsets.all(10),
+                              child: Text(
+                                widget.product['name'].length >
                                     ResponsiveScreen.fullRepWidth(context, 22)
                                         .round()
-                                ? widget.product['name'].substring(
-                                        0,
-                                        ResponsiveScreen.fullRepWidth(
-                                                context, 22)
-                                            .round()) +
+                                    ? widget.product['name'].substring(
+                                    0,
+                                    ResponsiveScreen.fullRepWidth(
+                                        context, 22)
+                                        .round()) +
                                     '...'
-                                : widget.product['name'],
-                            style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
+                                    : widget.product['name'],
+                                style: GoogleFonts.poppins(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                ),
+                              ),
                             ),
-                          ),
                         ),
+
                       ],
                     ),
                     Container(

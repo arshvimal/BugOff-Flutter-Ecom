@@ -20,7 +20,7 @@ class DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: PageView(
         onPageChanged: (value) {
-          value == 2
+          value == 3
               ? Navigator.of(context).pushReplacement(MaterialPageRoute(
                   builder: (context) => Loginscreen(),
                 ))
